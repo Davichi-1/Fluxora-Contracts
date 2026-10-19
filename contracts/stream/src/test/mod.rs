@@ -200,3 +200,7 @@ mod one_second_stream;
 // (`i128::MAX`), driven end to end through the public ABI on a dedicated
 // full-range asset; also pins the creation-guard boundary that rejects it.
 mod max_deposit;
+
+// Issue #2071 — pin the boundary behaviour of `withdrawable_of`: zero, one,
+// the maximum accepted stream id, and one past it.
+mod withdrawable_of_boundary;
