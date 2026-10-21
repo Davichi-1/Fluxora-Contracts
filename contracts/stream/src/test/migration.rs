@@ -484,9 +484,10 @@ fn the_collapsed_transfer_call_is_gated_by_the_immutable_flag() {
         &true,
         &true,
         &false, // transferable
-        &None,
+      
+     &false, // transferable
+        &None,  // reference
     );
-
     assert_eq!(
         h.client
             .try_transfer_recipient(&id, &h.other)

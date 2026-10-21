@@ -222,7 +222,7 @@ impl<'a> Harness<'a> {
         let ledgers = u32::try_from(ledgers).unwrap_or(u32::MAX);
         self.env
             .ledger()
-            .set_sequence_number(info.sequence_number.saturating_add(ledgers));
+            .set_sequence_number(info.sequence_number.saturating_add(ledgers as u32));
     }
 
     /// Jump to an absolute timestamp.

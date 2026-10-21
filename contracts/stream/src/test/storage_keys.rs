@@ -521,6 +521,7 @@ fn deterministic_stream(env: &Env) -> Stream {
         paused_total: 0,
         status: StreamStatus::Active,
         curve: ReleaseCurve::Linear,
+        reference: None,
     }
 }
 
@@ -923,6 +924,8 @@ fn v2_layout_round_trips() {
         paused_at: None,
         paused_total: 0,
         status: StreamStatus::Active,
+        curve: ReleaseCurve::Linear,
+        reference: None,
     };
 
     let bytes = stream.to_xdr(&env);
@@ -933,7 +936,9 @@ fn v2_layout_round_trips() {
     assert_eq!(decoded.end_time, 1_731_536_000);
     assert_eq!(decoded.cliff_time, 1_702_592_000);
     assert_eq!(decoded.status, StreamStatus::Active);
-
+assert_eq!(decoded.status, StreamStatus::Active);
+    assert_eq!(decoded.curve, ReleaseCurve::Linear);
+    assert_eq!(decoded.reference, None);
     assert_eq!(decoded.curve, ReleaseCurve::Linear);
     assert_eq!(decoded.reference, None);
 }

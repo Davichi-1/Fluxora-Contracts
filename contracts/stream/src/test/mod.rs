@@ -149,6 +149,9 @@ mod event_ordering_failed_transfer;
 // asserted after failed creations, after every terminal operation, under
 // deliberate counter corruption, and across randomized sequences.
 mod stream_count_consistency;
+// Issue #1699 — stream_count consistency across stream statuses.
+mod stream_count_states;
+
 // Issue — `stream_count` boundary behaviour: zero, one, the maximum accepted
 // value, and one past it (refused with a typed error, never a panic).
 mod stream_count_boundaries;

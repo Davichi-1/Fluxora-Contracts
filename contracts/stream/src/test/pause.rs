@@ -1054,6 +1054,7 @@ fn resume_exactly_at_end_time_conservation_and_final_state() {
             paused_duration: 70 * DAY,
             // paused_total is the post-resume cumulative value stored in stream
             paused_total: s_after.paused_total,
+            recipient: h.recipient.clone(),
         };
 
         assert_eq!(
